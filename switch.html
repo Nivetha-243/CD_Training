@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Switch Case Example</h1>
+    <script>
+        let mark = prompt("Enter the marks: ", '');
+        switch (mark){
+            case '':
+                alert("Please enter your marks");
+                break;
+            case ' ':
+                alert("Enter your marks");
+                alert("Enter only in numbers");
+                break;   
+            case '100':
+                alert ("Grade A");
+                break;
+            default:
+                alert ("Mark should be 100");
+        }
+    </script>
+    
+</body>
+</html>
