@@ -1,0 +1,22 @@
+[
+    {
+        "bmi": [18],
+        "classification":"Under weight",
+        "healthrisk":"minimal"
+    },
+    {
+        "bmi": [19,20,21],
+        "classification":"Normal weight",
+        "healthrisk":"minimal"
+    },
+    {
+       "bmi": [22,23,24,25],
+        "classification":"Over weight",
+        "healthrisk":"minimal"
+    },
+    {
+       "bmi": [26,27,28,29,30],
+        "classification":"Obese",
+        "healthrisk":"minimal"
+    }
+]
