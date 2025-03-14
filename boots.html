@@ -9,28 +9,101 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <style>
-        
+        .containerOne{
+            background-color: rgb(17, 151, 133);
+            align-items: center;
+        }
+        .container{
+            background-color: rgb(17, 151, 133);
+            margin-left: 35%;
+            margin-top: 4%;
+            width:500px;
+            padding:100px;
+        }
+
     </style>
 </head>
 <body>
-    <div class="img-rounded">
-        <h1>Weight Machine</h1>
-        <div>
-            <label >Enter your weight:</label>
-            <input type="number" required>
+    <div class="container">
+    <form class="btn btn-form" id="containerOne">
+        <h1>BMI Calculation</h1>
+        <div class="form-group">
+            <label>Enter your Name:</label>
+            <input type="text" required id="name" class="form-control">
         </div>
-        <div>
+        <div class="form-group">
+            <label>Enter your weight:</label>
+            <input type="number" required id="weight" class="form-control">
+        </div>
+        <div class="form-group">
             <label>Enter your height:</label>
-            <input type="number" required> 
+            <input type="number" required id="height" class="form-control"> 
         </div>
-        <div>
-            <button class="text-success">Submit</button>
+        <div class="form-group">
+            <label>Enter your Age:</label>
+            <input type="number" required id="age" class="form-control">
         </div>
+        <div class="form-group">
+            <button onclick="calculateBmi()">Calculate</button>
+        </div>
+    </form> 
+    <div class="containerTwo">
+        <div id="calculation"></div>
+        <table border="1" rules="all" id="informationTable"></table> 
+    </div>
+    <div>
+        <table border="1" rules="all" id="BMitable"></table>
+    </div>
     </div>
     
-    
+    <script>    
+        function calculateBmi(){
+        var result = document.getElementById ("calculation");  
+        var weight = document.getElementById ("weight").value;
+        var height = document.getElementById ("height").value;
+        var name = document.getElementById ("name").value;
+        var age = document.getElementById ("age").value;      
+        var BMI = Math.round(weight/(height**2)*10000);
+        var status;        
+        switch(true){
+            case BMI <= 18:
+                status = "You are Under Weight";
+                break;
+            case 18 < BMI && BMI <= 21:
+                status = "You are Normal Weight";
+                break;
+            case 21 < BMI && BMI <= 25:
+                status = "You are Over Weight";  
+                break;  
+            case 25 < BMI && BMI <= 30:
+                status = "You are Obese";  
+                break;
+            default:
+                status = "Fill all the details";
+            }
+        result.innerHTML="Welcome " + name + "...! <br> Your BMI value is " + BMI + ". <br> " + status + ".";
+        var detailsPer = [name, age, height, weight, BMI, status];
+        var detailsPerson = ["Name", "Age", "Height", "Weight", "BMI Value", "Status"];
+        var tableVar = document.getElementById("informationTable");
+        var tableSize = "<thead>"+"<tr>";
+        for (var k of detailsPerson){
+            tableSize += "<th >"+k+"</th>";
+            }
+        tableSize += "</tr>"+"</thead>"+"<tbody>"+"<tr>";
+            for (let j=0; j<detailsPer.length; j++){
+                    tableSize += "<td>"+detailsPer[j]+"</td>";
+                }
+        tableSize += "</tr>"+"<tbody>";
 
-
+    return tableVar.innerHTML = tableSize; 
+    }
+    var Bmicontent = document.getElementById("BMitable");
+    fetch (data.json)
+    .then(response=>response.json);
+    var json = response.json;
+    console.log(json);
+    Bmicontent += ;
+    </script>
     
 </body>
 </html>
