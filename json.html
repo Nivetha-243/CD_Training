@@ -22,12 +22,26 @@
         <h1>For Each</h1>
         <p id="forex"></p>
     </div>
+    <div>
+        <h1>Map</h1>
+        <p id="mapex"></p>
+    </div>
     <script>
         let text = "";
         var forExa = document.getElementById("jsonCheck");
         var jsonTable = document.getElementById("forex");
+        var mapExa = document.getElementById("mapex");
+
         var tableCont = ["BMI","Classification", "Health Risk"];
+
         tableCont.forEach(forExample);
+        mapOut = tableCont.map(i => {
+            var mapOutput = " " + i
+            return mapOutput
+        })
+        mapExa.innerHTML = mapOut;
+
+
         const user = {
             bmi: "<18",
             classification:"Under weight",
