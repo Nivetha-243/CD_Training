@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Factorial Calculation</h1>
+        <label>Enter the value to find factorial:</label>
+        <input type = "number" id = "valueOFfac">
+        <h3 id = "outputValue"></h3>
+        <button onclick="opeFac()">Ok</button>
+    </div>
+    <script>
+        function opeFac(){
+        var val = document.getElementById ("valueOFfac").value;
+        var valOut = document.getElementById ("outputValue");
+        function recursFun(sum){
+            if (sum == 0){
+                return 1;
+            }
+            return sum * recursFun(sum-1);
+        }
+    return valOut.innerHTML = recursFun(val); 
+        
+    }
+    </script>
+</body>
+</html>
