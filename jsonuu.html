@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-top:200px;
+            margin-left: 600px;
+            font-size:xx-large;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table border="1" rules="all" id="jsonCheck"></table>
+    </div>
+    <script>
+        var jsonTable = document.getElementById("jsonCheck");
+        var tableCont = ["BMI","Classification", "Health Risk"];
+        const user = {
+            bmi: "<18",
+            classification:"Under weight",
+            healthrisk:"minimal"
+        }   
+        var createTab = "<thead><tr>";
+            for (i of tableCont){
+                createTab += "<th>" + i + "</th>";
+            } 
+            createTab += "</tr></thead><tbody><tr>";
+                user.map((e)=>)
+            createTab += "<td>" + mapkey.bmi + "</td>";
+            createTab += "</tr></tbody>";
+            jsonTable.innerHTML = createTab;
+    </script>
+</body>
+</html>
