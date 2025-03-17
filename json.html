@@ -13,12 +13,21 @@
     </style>
 </head>
 <body>
+    
     <div>
+        <h1>For of & For in</h1>
         <table border="1" rules="all" id="jsonCheck"></table>
     </div>
+    <div>
+        <h1>For Each</h1>
+        <p id="forex"></p>
+    </div>
     <script>
-        var jsonTable = document.getElementById("jsonCheck");
+        let text = "";
+        var forExa = document.getElementById("jsonCheck");
+        var jsonTable = document.getElementById("forex");
         var tableCont = ["BMI","Classification", "Health Risk"];
+        tableCont.forEach(forExample);
         const user = {
             bmi: "<18",
             classification:"Under weight",
@@ -29,10 +38,18 @@
                 createTab += "<th>" + i + "</th>";
             } 
             createTab += "</tr></thead><tbody><tr>";
-                //user.map((e)=>)
-            createTab += "<td>" + mapkey.bmi + "</td>";
+            for (i in user){
+                createTab += "<td>" +user[i]+ "</td>";
+            }
+            function forExample(item, index){
+                text += index + " :" + item + "<br>";
+
+            }
+            
             createTab += "</tr></tbody>";
-            jsonTable.innerHTML = createTab;
+            forExa.innerHTML = createTab;
+
+            jsonTable.innerHTML = text;
     </script>
 </body>
 </html>
